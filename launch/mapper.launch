@@ -29,17 +29,17 @@
 
             <!-- Set parameters for the mapper -->
             <param name="map_resolution" value="0.10"/>          <!-- meters -->
-            <param name="max_range" value="6"/>                 <!-- meters -->
+            <param name="max_range" value="3"/>                 <!-- meters -->
             <param name="min_range" value="0.5"/>              <!-- meters -->
 
             <!-- Time to forget information (set as negative if infinity) -->
-            <param name="memory_time" value="-30.0"/>           <!-- seconds -->
+            <param name="memory_time" value="10.0"/>           <!-- seconds -->
 
             <!-- Fading memory thread update rate (Hz) -->
-            <param name="fading_memory_update_rate" value="1"/><!-- Hz -->
+            <param name="fading_memory_update_rate" value="10"/><!-- Hz -->
 
             <!-- Map inflation parameters -->
-            <param name="inflate_radius_xy" value="0.40"/>       <!-- meters -->
+            <param name="inflate_radius_xy" value="0.30"/>       <!-- meters -->
             <param name="inflate_radius_z" value="0.30"/>       <!-- meters -->
 
             <!-- Camera FOV (radians): map is only updated within this FOV -->

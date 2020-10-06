@@ -94,7 +94,7 @@ void MapperClass::Initialize(ros::NodeHandle *nh) {
 
     // Check if number of cameras added match the number of frame_id for each of them
     if (depth_cam_names.size() != cam_frame_id.size()) {
-        ROS_ERROR("Number of cameras is different from camera tf frame_id!");
+        ROS_ERROR("Number of cameras is different from camera tf frame_id! %d %d",depth_cam_names.size(), cam_frame_id.size());
     }
 
     // Load service names
@@ -216,7 +216,7 @@ void MapperClass::Initialize(ros::NodeHandle *nh) {
         nh->advertise<visualization_msgs::Marker>(graph_tree_marker_topic, 10);
 
     // Notify initialization complete
-    ROS_DEBUG("Initialization complete");
+    ROS_INFO("Initialization complete");
 }
 
 
