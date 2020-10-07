@@ -126,4 +126,7 @@ bool MapperClass::RRGService(mapper::RRT_RRG_PRM::Request &req,
     return true;
 }
 
+bool MapperClass::CollisionCheckService(std_srvs::SetBool::Request &req,
+                                    std_srvs::SetBool::Response &res) {
+
 }  // namespace mapper

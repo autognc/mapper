@@ -113,7 +113,7 @@ void MapperClass::Initialize(ros::NodeHandle *nh) {
     // Load publisher names
     std::string obstacle_markers_topic, free_space_markers_topic;
     std::string inflated_obstacle_markers_topic, inflated_free_space_markers_topic;
-    std::string frustum_markers_topic, discrete_trajectory_markers_topic;
+    std::string frustum_markers_topic, discrrg_srv_rete_trajectory_markers_topic;
     std::string collision_detection_topic, graph_tree_marker_topic;
     nh->getParam("obstacle_markers", obstacle_markers_topic);
     nh->getParam("free_space_markers", free_space_markers_topic);
@@ -180,13 +180,14 @@ void MapperClass::Initialize(ros::NodeHandle *nh) {
         reset_map_srv_name, &MapperClass::ResetMap, this);
     save_map_srv_ = nh->advertiseService(
         save_map_srv_name, &MapperClass::SaveMap, this);
-    load_map_srv_ = nh->advertiseService(
+    load_map_srv_ = nh->advertiseService(rrg_srv_rrg_srv_
         load_map_srv_name, &MapperClass::LoadMap, this);
     process_pcl_srv_ = nh->advertiseService(
         process_pcl_srv_name, &MapperClass::OctomapProcessPCL, this);
     rrg_srv_ = nh->advertiseService(
         rrg_srv_name, &MapperClass::RRGService, this);
-
+    collision_check_srv = nh->advertiseService(
+        collision_check_srv_name, &MapperClass::CollisionCheckService, this);
     // if (use_haz_cam) {
     //     std::string cam = TOPIC_HARDWARE_NAME_HAZ_CAM;
     //     haz_sub_ = nh->subscribe(cam_prefix + cam + cam_suffix, 10, &MapperClass::PclCallback, this);
